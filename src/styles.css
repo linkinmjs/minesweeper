@@ -1,4 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+/* Composite color tones:
+    #2B6BCC
+    #6D7E99
+    #4FF1FF
+    #FFF4F0
+    #CC3E2B
+*/
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF4F0;
 }

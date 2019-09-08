@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { brick } from 'src/app/models/brick.model';
 
 @Component({
   selector: 'app-board',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+   
   }
 
 }
