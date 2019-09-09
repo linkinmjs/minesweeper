@@ -1,0 +1,10 @@
+.isFlagged {
+    background-color: yellow;
+}
+.esUnDiv{
+    border:3px solid #cc3e2b;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    
+}
