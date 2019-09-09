@@ -1,8 +1,16 @@
 export class brick{
-    mine: boolean = false;
-    status: 'open' | 'clear' | 'flag' = 'open';
-    proximyMines: 0;
+    mine: boolean;
+    status: 'open' | 'clear' | 'flag';
+    proximyMines: number;
+    row:number ;
+    column:number;
 
     //x y
-    constructor(public row: number, public column: number){}
+    constructor(row: number,column: number){
+      this.row = row;
+      this.column = column;
+      this.status = "open";
+      this.proximyMines = 0;
+      this.mine = false;
+    }
 }

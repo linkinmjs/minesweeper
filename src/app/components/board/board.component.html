@@ -1,16 +1,17 @@
 <table>
-    <tr *ngFor="let row of bricks ; let i = index">
-        <td *ngFor="let column of bricks ; let j = index">
+    <tr *ngFor="let row of gameService.getBoard() ; let i = index">
+        <td *ngFor="let column of gameService.getBoard() ; let j = index">
             <!-- If is flagged, then background change -->
-            <div class="esUnDiv" *ngIf="!boardRevealed"
+            <div *ngIf="!boardRevealed"
             (click)="revealBrick(i,j)"
             (contextmenu)="setupFlag(i,j)"
-            [ngClass]="{'isFlagged': flagged(i,j)}">?</div>
+            [ngClass]="{'isFlagged': flagged(i,j) , 'esUnDiv': true}">?</div>
             <!-- TO-DO: remplace for 1 ngClass -->
-            <div *ngIf="boardRevealed && bricks[i][j].mine">X</div>
-            <div *ngIf="boardRevealed && !bricks[i][j].mine">0</div>
+            <div *ngIf="boardRevealed && gameService.brickMine(i , j )">X</div>
+            <div *ngIf="boardRevealed && !gameService.brickMine(i , j)">0</div>
         </td>
     </tr>
 </table>
 
-<button (click)="setupBoard()">Restart</button>
+<button (click)="restart()">Restart</button>
+
