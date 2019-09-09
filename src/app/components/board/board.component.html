@@ -1,0 +1,11 @@
+<table>
+    <tr *ngFor="let row of bricks ; let i = index">
+        <td *ngFor="let column of bricks ; let j = index">
+        <button *ngIf="!boardRevealed" (click)="revealBrick(i,j)">?</button>
+        <button *ngIf="boardRevealed && bricks[i][j].mine">X</button>
+        <button *ngIf="boardRevealed && !bricks[i][j].mine">0</button>
+        </td>
+    </tr>
+</table>
+
+<button (click)="setupBoard()">Restart</button>
