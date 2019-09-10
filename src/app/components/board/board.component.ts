@@ -12,6 +12,7 @@ export class BoardComponent implements OnInit {
 
 
   boardRevealed = false;
+
   constructor(public gameService: GameService) {
   }
 
@@ -26,17 +27,18 @@ export class BoardComponent implements OnInit {
       alert('BOOM!');
       this.boardRevealed = true;
     } else {
-      console.log('No mine here!');
+      this.gameService.setStatus(i, j , 'clear');
     }
   }
 
+
   setupFlag(i, j) {
     const currentStatus = this.gameService.brickStatus(i , j);
-    if (currentStatus !== 'flag') {
+    if (currentStatus === 'open') {
       this.gameService.setStatus(i , j , 'flag');
     } else
       if (currentStatus === 'flag') {
-        this.gameService.setStatus(i , j , 'clear');
+        this.gameService.setStatus(i , j , 'open');
       }
     return false;
   }
@@ -49,4 +51,7 @@ export class BoardComponent implements OnInit {
     this.boardRevealed = false;
     this.gameService.startGame();
   }
+
+
+
 }
